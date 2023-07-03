@@ -1,0 +1,66 @@
+.body{
+  background-color: #f2f2f2;
+}
+
+.review-form {
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.review-form h2 {
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+.rating {
+  display: inline-block;
+  font-size: 24px;
+}
+
+.star {
+  cursor: pointer;
+  color: #000;
+}
+
+.star.active {
+  color: #ff9800;
+}
+
+.star::before {
+  content: "\2606"; /* Outline star symbol */
+}
+
+.star.active::before {
+  content: "\2605"; /* Filled star symbol */
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+

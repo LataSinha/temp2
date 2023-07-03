@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div *ngIf="product" class="product-details">
+  <div>
+    <img [src]="'assets/productImage/' + product.image" alt="Product Image" class="product-image" />
+    <div class="product-info">
+      <h3><b>{{ product.name }}</b></h3>
+      <p class="product-rating average-rating">
+        <span class="star" [ngClass]="{ 'active': calculateAverageRating(product.reviews) >= 1 }"></span>
+        <span class="star" [ngClass]="{ 'active': calculateAverageRating(product.reviews) >= 2 }"></span>
+        <span class="star" [ngClass]="{ 'active': calculateAverageRating(product.reviews) >= 3 }"></span>
+        <span class="star" [ngClass]="{ 'active': calculateAverageRating(product.reviews) >= 4 }"></span>
+        <span class="star" [ngClass]="{ 'active': calculateAverageRating(product.reviews) >= 5 }"></span>
+        <span class="star-half" *ngIf="averageRating % 1 !== 0"></span>
+      </p>
+      <p class="product-code"><b>Code: </b>{{ product.code }}</p>
+      <p class="product-brand"><b>Brand: </b>{{ product.brand }}</p>
+      <hr/>
+      <h4><b>Reviews: </b><span style="color: blue;">{{ product.reviews.length }}</span></h4>
+      <div *ngFor="let review of product.reviews" class="review">
+        <p class="review-username"><b>User: </b>{{ review.user.firstName }} {{ review.user.lastName}}</p>
+        <div class="star-rating">
+          <span class="star" [ngClass]="{ 'active': review.rating >= 1 }"></span>
+          <span class="star" [ngClass]="{ 'active': review.rating >= 2 }"></span>
+          <span class="star" [ngClass]="{ 'active': review.rating >= 3 }"></span>
+          <span class="star" [ngClass]="{ 'active': review.rating >= 4 }"></span>
+          <span class="star" [ngClass]="{ 'active': review.rating >= 5 }"></span>
+        </div>
+        <p class="review-content"><b>Content: </b>{{ review.content }}</p>
+        <hr/>
+      </div>
+      <button (click)="addReview(product.code)" class="add-review-button">
+        Add Review
+      </button>
+    </div>
+  </div>
+</div>
+<br/><br/>
+<app-footer></app-footer>

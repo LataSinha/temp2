@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+
+<input
+  type="text"
+  [(ngModel)]="searchTerm"
+  (keyup.enter)="searchProduct(searchTerm)"
+  placeholder="Search by Product Name"
+  class="search-box"
+/>
+
+<div class="product-grid">
+  <div *ngIf="isItemNotFound" class="item-not-found">Sorry, the item is not present.</div>
+  <div *ngFor="let product of filteredProducts" class="product-card">
+    <img [src]="'assets/productImage/' + product.image" alt="Product Image" class="image" />
+    <div class="product-info">
+      <h3 style="text-align:center;"><b>{{ product.name }}</b></h3>
+      <p><b>Code: </b>{{ product.code }}</p>
+      <p><b>Brand: </b> {{ product.brand }}</p>
+      <button (click)="showProductDetails(product.code)">Show Details</button>
+    </div>
+  </div>
+</div>
+
+<br /><br />
+<a routerLink="/addProduct" routerLinkActive="active" class="addProduct">Raise request to approve the product</a>
+<br /><br /><br/><br/><br/><br/><br /><br /><br/><br/><br/><br/><br/><br/><br/><br/>
+<app-footer class="footer"></app-footer>

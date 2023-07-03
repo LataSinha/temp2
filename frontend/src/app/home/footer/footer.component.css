@@ -1,0 +1,59 @@
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: #A9A9A9;
+  padding: 10px;
+  height:10%;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  margin: 0 10px;
+}
+
+i {
+  font-size: 24px;
+}
+
+footer div {
+    position: relative;
+    display: inline-block;
+  }
+  
+  footer div .badge1 {
+    position: absolute;
+    top: 1%;
+    right: 45%;
+    transform: translate(50%, -50%);
+    padding: 1px 4px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+  }
+
+  footer div .badge2 {
+    position: absolute;
+    top: 2%;
+    right: 55%;
+    transform: translate(50%, -50%);
+    padding: 1px 4px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+  }
+
+  footer div .badge3 {
+    position: absolute;
+    top: 2%;
+    right: 80%;
+    transform: translate(50%, -50%);
+    padding: 1px 4px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+  }
+  

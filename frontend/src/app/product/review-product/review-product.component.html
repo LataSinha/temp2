@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="review-form">
+  <h2>Add Review</h2>
+  <div class="form-group">
+    <label for="content">Review:</label>
+    <textarea id="content" [(ngModel)]="content" rows="4" cols="50" required minlength="20" maxlength="400"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="rating">Rating:</label>
+    <div class="rating">
+      <span class="star" (click)="setRating(1)" [ngClass]="{ active: rating >= 1 }"></span>
+      <span class="star" (click)="setRating(2)" [ngClass]="{ active: rating >= 2 }"></span>
+      <span class="star" (click)="setRating(3)" [ngClass]="{ active: rating >= 3 }"></span>
+      <span class="star" (click)="setRating(4)" [ngClass]="{ active: rating >= 4 }"></span>
+      <span class="star" (click)="setRating(5)" [ngClass]="{ active: rating === 5 }"></span>
+    </div>
+  </div>
+  <button (click)="submitReview()">Submit Review</button>
+</div>
+
+<app-success-notification *ngIf="showSuccessNotification"></app-success-notification>
+<br/><br/><br/><br/><br/>
+<app-footer></app-footer>

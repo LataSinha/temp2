@@ -1,0 +1,10 @@
+<nav>
+  <div class="navbar-header">
+    <span class="navbar-brand">Product Search Application</span>
+  </div>
+  <ul class="navbar-links">
+    <li><a *ngIf="!isLoggedIn" routerLink="/register" routerLinkActive="active">Register</a></li>
+    <li><a *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active">Login</a></li>
+    <li *ngIf="isLoggedIn"><a (click)="logout()" style="cursor: pointer;">Logout</a></li>
+  </ul>
+</nav>
